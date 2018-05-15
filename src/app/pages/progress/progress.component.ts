@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-progress',
+  templateUrl: './progress.component.html',
+  styleUrls: []
+})
+export class ProgressComponent implements OnInit {
+
+  progressValue1  = 75;
+  progressValue2 = 55;
+
+
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+
+}

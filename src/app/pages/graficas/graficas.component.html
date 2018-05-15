@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special {{ graficos.grafico1.type }}</h5>
+                <p class="card-text">
+                    With supporting text below as a natural lead-in to additional content.
+
+                </p>
+                <!-- <div style="display: block">
+                    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div> -->
+                <app-grafico-dona [chartLabel]=graficos.grafico1.labels [chartData]=graficos.grafico1.data [chartType]=graficos.grafico1.type></app-grafico-dona>
+
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <app-grafico-dona [chartLabel]=graficos.grafico2.labels [chartData]=graficos.grafico2.data [chartType]=graficos.grafico2.type></app-grafico-dona> <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special {{ graficos.grafico1.type }}</h5>
+                <p class="card-text">
+                    With supporting text below as a natural lead-in to additional content.
+
+                </p>
+                <!-- <div style="display: block">
+                        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                    </div> -->
+                <app-grafico-bar [barChartLabels] [barChartType] [barChartLegend]></app-grafico-bar>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <app-grafico-bar [barChartLabels] [barChartType] [barChartLegend]></app-grafico-bar>
+            </div>
+        </div>
+    </div>
+</div>
