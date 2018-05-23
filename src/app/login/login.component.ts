@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     console.log( forma.value);
     
     this._usuarioService.login(usuario, forma.value.remember)
-                  .subscribe( returnTo => this.router.navigate(['/dashboard']) ); 
+                  .subscribe( returnTo => this.router.navigate(['/graficas']) ); 
     
   //  this.router.navigate(['/dashboard']);
   }

@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule } from '@angular/forms';
 
@@ -16,6 +17,9 @@ import { GraficoDonaComponent } from '../component/grafico-dona/grafico-dona.com
 import { GraficoBarComponent } from '../component/grafico-bar/grafico-bar.component';
 import { RxjsComponent } from './rxjs.component';
 import { PromesasComponent } from './promesas/promesas.component';
+import { NopagefoundComponent } from '../shared/nopagefound/nopagefound.component';
+import { BankComponent } from './bank/bank.component';
+
 
 
 @NgModule({
@@ -23,8 +27,10 @@ import { PromesasComponent } from './promesas/promesas.component';
     SharedModule,
     PAGES_ROUTES,
     FormsModule,
+    BrowserModule,
     ChartsModule
       ],
+      
   declarations: [
   PagesComponent,
   DashboardComponent,
@@ -34,13 +40,17 @@ import { PromesasComponent } from './promesas/promesas.component';
   GraficoDonaComponent,
   GraficoBarComponent,
   RxjsComponent,
-  PromesasComponent
+  PromesasComponent,
+  BankComponent  
+  
   ],
   exports: [
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
-    GraficasComponent
+    GraficasComponent,
+    BankComponent
+    
     ]
 
 })

@@ -16,6 +16,7 @@ import { GraficoBarComponent } from './component/grafico-bar/grafico-bar.compone
 // services
 import { ServiceModule } from './services/service.module';
 import { SharedModule } from './shared/shared.module';
+import { NopagefoundComponent } from './shared/nopagefound/nopagefound.component';
 
 
 
@@ -25,6 +26,8 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    NopagefoundComponent
+    
     // SidebarComponent
    ],
   imports: [
@@ -32,8 +35,11 @@ import { SharedModule } from './shared/shared.module';
     APP_ROUTES,
     PagesModule,
     FormsModule,
+    BrowserModule,
     ReactiveFormsModule,
-    ServiceModule
+    ServiceModule,
+    SharedModule,
+    
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,11 +3,13 @@ import { Usuario } from '../../models/usuario.models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import { resolvePtr } from 'dns';
 import { log } from 'util';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { Options } from 'selenium-webdriver';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UsuarioService {
@@ -31,10 +33,17 @@ export class UsuarioService {
 
   logout() {
 
+    let url = 'http://localhost:8080/logout';
+    console.log('VAMOS A LOGOUT');
+    
+    this.http.get(url, { withCredentials: true })
+          .subscribe(resp => {
+            console.log('LOGOUT RESP ', resp);
+            
+          });
     this.usuario = null;
     localStorage.removeItem('usuario');
     this.router.navigate(['/login']);
-
   }
 
   cargarStorage() {
@@ -72,6 +81,10 @@ export class UsuarioService {
                //   localStorage.setItem('id', resp.usuario.id);
                   localStorage.setItem('usuario', JSON.stringify(resp));
                   return true;
+            }).catch( err => {
+              console.log('Error Status ', err.status);
+              swal('Error en el Login', err.error, 'error');
+                return Observable.throw(err);
             });
 
   }
@@ -86,6 +99,10 @@ export class UsuarioService {
                   swal('Usuario Creado con Exito', usuario.email, 'success');
                   return resp.usuario;
                   
+                }).catch( err => {
+                  console.log('Error Status ', err.status);
+                  swal('Error en el Login', 'usuario o email ya existe', 'error');
+                    return Observable.throw(err);
                 });
 
   }
